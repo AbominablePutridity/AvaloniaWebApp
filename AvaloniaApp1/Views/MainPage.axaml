@@ -1,0 +1,27 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="Views.MainPage">
+      <Grid>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="*"/>
+          <RowDefinition Height="*"/>
+          <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>  
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="50"/>
+          <ColumnDefinition Width="*"/>
+          <ColumnDefinition Width="*"/>
+          <ColumnDefinition Width="*"/>
+          <ColumnDefinition Width="50"/>
+        </Grid.ColumnDefinitions>
+
+        <Button Content="&lt;" Grid.Column="0" Grid.Row="0" Grid.RowSpan="3"/>
+        <Button Content="&gt;" Grid.Column="4" Grid.Row="0" Grid.RowSpan="3"/>
+
+        <Grid Background="Gray" Grid.Row="1" Grid.Column="1"/>
+      </Grid>
+
+</UserControl>
