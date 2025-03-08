@@ -6,6 +6,7 @@ using System;
 using System.Threading.Tasks;
 using Tmds.DBus.Protocol;
 using Avalonia.Interactivity;
+using System.Text.Json;
 
 namespace Views;
 
@@ -35,7 +36,44 @@ public partial class MainPage : UserControl
         }
 
         string result = await _product.LoadDataAsync(apiUrl);
-        TBlock.Text = result;
+
+        Console.WriteLine(result);
+
+        // Парсинг JSON строки в массив объектов
+        Product[] products = JsonSerializer.Deserialize<Product[]>(result);
+
+        // foreach (string item in products)
+        // {
+        //     Console.WriteLine(item);
+        // }
+
+        // перебор массива с обьектами продуктов и запись каждого продукта в отдельный блок
+        for (int i = 0; i < products.Length; i++) {
+            switch (i) {
+                case 0:
+                    TBlockName.Text = products[0].name;
+                    TBlockDescription.Text = products[0].description;
+                    TBlockSize.Text = products[0].size;
+                    break;
+                case 1:
+                    //TODO
+                    break;
+                case 2:
+                    //TODO
+                    break;
+                case 3:
+                    //TODO
+                    break;
+                case 4:
+                    //TODO
+                    break;
+                case 5:
+                    //TODO
+                    break;
+            }
+        }
+
+        Console.WriteLine(products[0].name);
     }
     
     private void Button_Click_Enter(object sender, RoutedEventArgs e)

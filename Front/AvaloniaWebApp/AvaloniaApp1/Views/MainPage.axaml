@@ -26,7 +26,9 @@
         <Button Content="&gt;" Grid.Column="4" Grid.Row="1" Grid.RowSpan="3"/>
 
         <Grid Background="Gray" Grid.Row="1" Grid.Column="1" Margin="5">
-            <TextBlock x:Name="TBlock" HorizontalAlignment="Center" TextWrapping="Wrap" TextTrimming="CharacterEllipsis" /> 
+            <TextBlock x:Name="TBlockName" HorizontalAlignment="Center" TextWrapping="Wrap" TextTrimming="CharacterEllipsis" FontSize="25"/> 
+            <TextBlock x:Name="TBlockDescription" HorizontalAlignment="Center" TextWrapping="Wrap" TextTrimming="CharacterEllipsis" FontSize="14" VerticalAlignment="Center" Margin="5"/>
+            <TextBlock x:Name="TBlockSize" HorizontalAlignment="Center" TextWrapping="Wrap" TextTrimming="CharacterEllipsis" FontSize="16" VerticalAlignment="Bottom" Margin="5"/> 
         </Grid>
 
         <Grid Background="Gray" Grid.Row="1" Grid.Column="2" Margin="5">
