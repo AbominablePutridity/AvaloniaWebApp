@@ -28,7 +28,7 @@ class ProductRepository extends ServiceEntityRepository
         ->leftJoin('product.author', 'actor');
 
         if ($authorName != null) {
-            $qb->andWhere('actor.code = :authorName')
+            $qb->andWhere('actor.name = :authorName')
             ->setParameter('authorName', $authorName);
         }
 

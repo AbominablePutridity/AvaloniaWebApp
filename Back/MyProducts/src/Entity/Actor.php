@@ -105,6 +105,9 @@ class Actor
     #[ORM\OneToMany(targetEntity: Product::class, mappedBy: 'author', orphanRemoval: true)]
     private Collection $products;
 
+    #[ORM\Column(length: 255)]
+    private ?string $name = null;
+
     public function __construct()
     {
         $this->raitings = new ArrayCollection();
@@ -184,6 +187,18 @@ class Actor
                 $product->setAuthor(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    public function setName(string $name): static
+    {
+        $this->name = $name;
 
         return $this;
     }
